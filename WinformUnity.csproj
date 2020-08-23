@@ -1,0 +1,480 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{DBCBB5FD-767C-4247-8744-4CB1DD83EE84}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>WinformUnity</RootNamespace>
+    <AssemblyName>WinformUnity</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Coding4Fun.Kinect.WinForm, Version=1.7.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\Coding4Fun.Kinect.WinForm.1.7.0\lib\Coding4Fun.Kinect.WinForm.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Azure.Mobile.Client, Version=4.1.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Azure.Mobile.Client.4.1.1\lib\net45\Microsoft.Azure.Mobile.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Azure.Mobile.Client.SQLiteStore, Version=4.1.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Azure.Mobile.Client.SQLiteStore.4.1.1\lib\net45\Microsoft.Azure.Mobile.Client.SQLiteStore.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Kinect, Version=1.8.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="SQLitePCLRaw.batteries_green, Version=1.0.0.0, Culture=neutral, PublicKeyToken=a84b7dcfb1391f7f, processorArchitecture=MSIL">
+      <HintPath>packages\SQLitePCLRaw.bundle_green.1.1.2\lib\net45\SQLitePCLRaw.batteries_green.dll</HintPath>
+    </Reference>
+    <Reference Include="SQLitePCLRaw.batteries_v2, Version=1.0.0.0, Culture=neutral, PublicKeyToken=8226ea5df37bcae9, processorArchitecture=MSIL">
+      <HintPath>packages\SQLitePCLRaw.bundle_green.1.1.2\lib\net45\SQLitePCLRaw.batteries_v2.dll</HintPath>
+    </Reference>
+    <Reference Include="SQLitePCLRaw.core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=1488e028ca7ab535, processorArchitecture=MSIL">
+      <HintPath>packages\SQLitePCLRaw.core.1.1.2\lib\net45\SQLitePCLRaw.core.dll</HintPath>
+    </Reference>
+    <Reference Include="SQLitePCLRaw.provider.e_sqlite3, Version=1.0.0.0, Culture=neutral, PublicKeyToken=9c301db686d0bd12, processorArchitecture=MSIL">
+      <HintPath>packages\SQLitePCLRaw.provider.e_sqlite3.net45.1.1.2\lib\net45\SQLitePCLRaw.provider.e_sqlite3.dll</HintPath>
+    </Reference>
+    <Reference Include="Svg, Version=2.4.2.26702, Culture=neutral, PublicKeyToken=12a0bac221edeae2, processorArchitecture=MSIL">
+      <HintPath>packages\Svg.2.4.2\lib\Svg.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ClassFile\AzureMobileService.cs" />
+    <Compile Include="ClassFile\FootSensor.cs" />
+    <Compile Include="ClassFile\Log.cs" />
+    <Compile Include="ClassFile\Sport.cs" />
+    <Compile Include="ContainerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ContainerForm.Designer.cs">
+      <DependentUpon>ContainerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ClassFile\GraphicsExtensions.cs" />
+    <Compile Include="ClassFile\MMCWHP_CS_Lib.cs" />
+    <Compile Include="ClassFile\Program.cs" />
+    <Compile Include="LoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginForm.Designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SelectablePanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ClassFile\StreamString.cs" />
+    <EmbeddedResource Include="ContainerForm.resx">
+      <DependentUpon>ContainerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="MediaPlayer">
+      <Guid>{22D6F304-B0F6-11D0-94AB-0080C74C7E95}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="stdole">
+      <Guid>{00020430-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Properties\0.png" />
+    <Content Include="Properties\1.png" />
+    <Content Include="Properties\2.png" />
+    <Content Include="Properties\3.png" />
+    <Content Include="Properties\disconnect-512.png" />
+    <Content Include="Properties\icons8-alpine-skiing-96.png" />
+    <Content Include="Properties\icons8-box-40.png" />
+    <Content Include="Properties\icons8-bulleted-list-96.png" />
+    <Content Include="Properties\icons8-business-building-96.png" />
+    <Content Include="Properties\icons8-businessman-96.png" />
+    <Content Include="Properties\icons8-calendar-96.png" />
+    <Content Include="Properties\icons8-calves-96.png" />
+    <Content Include="Properties\icons8-cancel-480.png" />
+    <Content Include="Properties\icons8-checked-480.png" />
+    <Content Include="Properties\icons8-client-management-96.png" />
+    <Content Include="Properties\icons8-coal-mine-96.png" />
+    <Content Include="Properties\icons8-combo-chart-96.png" />
+    <Content Include="Properties\icons8-company-96.png" />
+    <Content Include="Properties\icons8-conference-96.png" />
+    <Content Include="Properties\icons8-construction-workers-96.png" />
+    <Content Include="Properties\icons8-contacts-500.png" />
+    <Content Include="Properties\icons8-coworking-96.png" />
+    <Content Include="Properties\icons8-customer-insight-96.png" />
+    <Content Include="Properties\icons8-delete-filled-500.png" />
+    <Content Include="Properties\icons8-department-96.png" />
+    <Content Include="Properties\icons8-development-skill-96.png" />
+    <Content Include="Properties\icons8-download-from-the-cloud-filled-480.png" />
+    <Content Include="Properties\icons8-drill-96.png" />
+    <Content Include="Properties\icons8-edit-500.png" />
+    <Content Include="Properties\icons8-engineering-96.png" />
+    <Content Include="Properties\icons8-factory-96.png" />
+    <Content Include="Properties\icons8-feed-in-96.png" />
+    <Content Include="Properties\icons8-fork-lift-96.png" />
+    <Content Include="Properties\icons8-gas-industry-96.png" />
+    <Content Include="Properties\icons8-group-task-96.png" />
+    <Content Include="Properties\icons8-hammer-96.png" />
+    <Content Include="Properties\icons8-heart-with-mouse-96.png" />
+    <Content Include="Properties\icons8-id-verified-96.png" />
+    <Content Include="Properties\icons8-industrial-scales-96.png" />
+    <Content Include="Properties\icons8-iron-ore-96.png" />
+    <Content Include="Properties\icons8-junction-96.png" />
+    <Content Include="Properties\icons8-key-40.png" />
+    <Content Include="Properties\icons8-kicking-96.png" />
+    <Content Include="Properties\icons8-leg-96.png" />
+    <Content Include="Properties\icons8-lock-96.png" />
+    <Content Include="Properties\icons8-lock-963.png" />
+    <Content Include="Properties\icons8-lock-outline-96.png" />
+    <Content Include="Properties\icons8-login-to-my-account-96.png" />
+    <Content Include="Properties\icons8-manager-96.png" />
+    <Content Include="Properties\icons8-muscle-96.png" />
+    <Content Include="Properties\icons8-name-tag-96.png" />
+    <Content Include="Properties\icons8-new-contact-96.png" />
+    <Content Include="Properties\icons8-oil-storage-tank-96.png" />
+    <Content Include="Properties\icons8-overhead-crane-96.png" />
+    <Content Include="Properties\icons8-padlock-96.png" />
+    <Content Include="Properties\icons8-pallet-96.png" />
+    <Content Include="Properties\icons8-password-96.png" />
+    <Content Include="Properties\icons8-pause-button-96.png" />
+    <Content Include="Properties\icons8-personal-trainer-96.png" />
+    <Content Include="Properties\icons8-pliers-96.png" />
+    <Content Include="Properties\icons8-plus-filled-480.png" />
+    <Content Include="Properties\icons8-radio-tower-96.png" />
+    <Content Include="Properties\icons8-refresh-filled-480.png" />
+    <Content Include="Properties\icons8-reseller-96.png" />
+    <Content Include="Properties\icons8-restart-96.png" />
+    <Content Include="Properties\icons8-restart-filled-480.png" />
+    <Content Include="Properties\icons8-rfid-sensor-96.png" />
+    <Content Include="Properties\icons8-rfid-signal-96.png" />
+    <Content Include="Properties\icons8-rfid-tag-96.png" />
+    <Content Include="Properties\icons8-search-filled-480.png" />
+    <Content Include="Properties\icons8-settings-480.png" />
+    <Content Include="Properties\icons8-settings-96.png" />
+    <Content Include="Properties\icons8-shoulders-96.png" />
+    <Content Include="Properties\icons8-shutdown-96.png" />
+    <Content Include="Properties\icons8-ski-simulator-96.png" />
+    <Content Include="Properties\icons8-skiing-96.png" />
+    <Content Include="Properties\icons8-sleep-mode-96.png" />
+    <Content Include="Properties\icons8-squats-96.png" />
+    <Content Include="Properties\icons8-supplier-96.png" />
+    <Content Include="Properties\icons8-teamwork-96.png" />
+    <Content Include="Properties\icons8-telephone-pole-96.png" />
+    <Content Include="Properties\icons8-torso-96.png" />
+    <Content Include="Properties\icons8-trash-can-filled-480.png" />
+    <Content Include="Properties\icons8-usb-connected-96.png" />
+    <Content Include="Properties\icons8-usb-connector-96.png" />
+    <Content Include="Properties\icons8-usb-disconnected-96.png" />
+    <Content Include="Properties\icons8-video-conference-96.png" />
+    <Content Include="Properties\icons8-virtual-reality-96.png" />
+    <Content Include="Properties\icons8-voice-recognition-96.png" />
+    <Content Include="Properties\icons8-wi-fi-96.png" />
+    <Content Include="Properties\icons8-wi-fi-connected-96.png" />
+    <Content Include="Properties\icons8-wi-fi-off-96.png" />
+    <Content Include="Properties\icons8-wood-100.png" />
+    <Content Include="Properties\icons8-wood-96.png" />
+    <Content Include="Properties\icons8-work-96.png" />
+    <Content Include="Properties\icons8-worker-100.png" />
+    <Content Include="Properties\icons8-worker-64.png" />
+    <Content Include="Properties\icons8-worker-80.png" />
+    <Content Include="Properties\icons8-worker-96.png" />
+    <Content Include="Properties\icons8-workers-100.png" />
+    <Content Include="Properties\icons8-workers-128.png" />
+    <Content Include="Properties\icons8-workers-96.png" />
+    <Content Include="Properties\icons8-workspace-96.png" />
+    <Content Include="Properties\LED GREEN.png" />
+    <Content Include="Properties\LED OFF.png" />
+    <Content Include="Properties\LED ORANGE.png" />
+    <Content Include="Properties\LED RED.png" />
+    <Content Include="Properties\skd.png" />
+    <Content Include="ResourceFile\0.png" />
+    <Content Include="ResourceFile\1.png" />
+    <Content Include="ResourceFile\2.png" />
+    <Content Include="ResourceFile\3.png" />
+    <Content Include="ResourceFile\disconnect-512.png" />
+    <Content Include="ResourceFile\icons8-box-40.png" />
+    <Content Include="ResourceFile\icons8-bulleted-list-96.png" />
+    <Content Include="ResourceFile\icons8-business-building-96.png" />
+    <Content Include="ResourceFile\icons8-businessman-96.png" />
+    <Content Include="ResourceFile\icons8-calendar-96.png" />
+    <Content Include="ResourceFile\icons8-cancel-480.png" />
+    <Content Include="ResourceFile\icons8-checked-480.png" />
+    <Content Include="ResourceFile\icons8-client-management-96.png" />
+    <Content Include="ResourceFile\icons8-coal-mine-96.png" />
+    <Content Include="ResourceFile\icons8-company-96.png" />
+    <Content Include="ResourceFile\icons8-conference-96.png" />
+    <Content Include="ResourceFile\icons8-construction-workers-96.png" />
+    <Content Include="ResourceFile\icons8-contacts-500.png" />
+    <Content Include="ResourceFile\icons8-coworking-96.png" />
+    <Content Include="ResourceFile\icons8-customer-insight-96.png" />
+    <Content Include="ResourceFile\icons8-delete-filled-500.png" />
+    <Content Include="ResourceFile\icons8-department-96.png" />
+    <Content Include="ResourceFile\icons8-development-skill-96.png" />
+    <Content Include="ResourceFile\icons8-download-from-the-cloud-filled-480.png" />
+    <Content Include="ResourceFile\icons8-drill-96.png" />
+    <Content Include="ResourceFile\icons8-edit-500.png" />
+    <Content Include="ResourceFile\icons8-engineering-96.png" />
+    <Content Include="ResourceFile\icons8-factory-96.png" />
+    <Content Include="ResourceFile\icons8-feed-in-96.png" />
+    <Content Include="ResourceFile\icons8-fork-lift-96.png" />
+    <Content Include="ResourceFile\icons8-gas-industry-96.png" />
+    <Content Include="ResourceFile\icons8-group-task-96.png" />
+    <Content Include="ResourceFile\icons8-hammer-96.png" />
+    <Content Include="ResourceFile\icons8-id-verified-96.png" />
+    <Content Include="ResourceFile\icons8-industrial-scales-96.png" />
+    <Content Include="ResourceFile\icons8-iron-ore-96.png" />
+    <Content Include="ResourceFile\icons8-junction-96.png" />
+    <Content Include="ResourceFile\icons8-key-40.png" />
+    <Content Include="ResourceFile\icons8-lock-96.png" />
+    <Content Include="ResourceFile\icons8-lock-963.png" />
+    <Content Include="ResourceFile\icons8-lock-outline-96.png" />
+    <Content Include="ResourceFile\icons8-login-to-my-account-96.png" />
+    <Content Include="ResourceFile\icons8-manager-96.png" />
+    <Content Include="ResourceFile\icons8-name-tag-96.png" />
+    <Content Include="ResourceFile\icons8-new-contact-96.png" />
+    <Content Include="ResourceFile\icons8-oil-storage-tank-96.png" />
+    <Content Include="ResourceFile\icons8-overhead-crane-96.png" />
+    <Content Include="ResourceFile\icons8-padlock-96.png" />
+    <Content Include="ResourceFile\icons8-pallet-96.png" />
+    <Content Include="ResourceFile\icons8-password-96.png" />
+    <Content Include="ResourceFile\icons8-pause-button-96.png" />
+    <Content Include="ResourceFile\icons8-pliers-96.png" />
+    <Content Include="ResourceFile\icons8-plus-filled-480.png" />
+    <Content Include="ResourceFile\icons8-radio-tower-96.png" />
+    <Content Include="ResourceFile\icons8-refresh-filled-480.png" />
+    <Content Include="ResourceFile\icons8-reseller-96.png" />
+    <Content Include="ResourceFile\icons8-restart-filled-480.png" />
+    <Content Include="ResourceFile\icons8-rfid-sensor-96.png" />
+    <Content Include="ResourceFile\icons8-rfid-signal-96.png" />
+    <Content Include="ResourceFile\icons8-rfid-tag-96.png" />
+    <Content Include="ResourceFile\icons8-search-filled-480.png" />
+    <Content Include="ResourceFile\icons8-settings-480.png" />
+    <Content Include="ResourceFile\icons8-supplier-96.png" />
+    <Content Include="ResourceFile\icons8-teamwork-96.png" />
+    <Content Include="ResourceFile\icons8-telephone-pole-96.png" />
+    <Content Include="ResourceFile\icons8-trash-can-filled-480.png" />
+    <Content Include="ResourceFile\icons8-video-conference-96.png" />
+    <Content Include="ResourceFile\icons8-wi-fi-96.png" />
+    <Content Include="ResourceFile\icons8-wi-fi-connected-96.png" />
+    <Content Include="ResourceFile\icons8-wi-fi-off-96.png" />
+    <Content Include="ResourceFile\icons8-wood-100.png" />
+    <Content Include="ResourceFile\icons8-wood-96.png" />
+    <Content Include="ResourceFile\icons8-work-96.png" />
+    <Content Include="ResourceFile\icons8-worker-100.png" />
+    <Content Include="ResourceFile\icons8-worker-64.png" />
+    <Content Include="ResourceFile\icons8-worker-80.png" />
+    <Content Include="ResourceFile\icons8-worker-96.png" />
+    <Content Include="ResourceFile\icons8-workers-100.png" />
+    <Content Include="ResourceFile\icons8-workers-128.png" />
+    <Content Include="ResourceFile\icons8-workers-96.png" />
+    <Content Include="ResourceFile\LED GREEN.png" />
+    <Content Include="ResourceFile\LED OFF.png" />
+    <Content Include="ResourceFile\LED ORANGE.png" />
+    <Content Include="ResourceFile\LED RED.png" />
+    <Content Include="ResourceFile\skd.png" />
+    <None Include="Resources\ccw.png" />
+    <None Include="Resources\cw.png" />
+    <None Include="Resources\sk.png" />
+    <None Include="Resources\icons8-baby-feet-96.png" />
+    <None Include="Resources\skd.png" />
+    <None Include="Resources\LED RED.png" />
+    <None Include="Resources\LED ORANGE.png" />
+    <None Include="Resources\LED OFF.png" />
+    <None Include="Resources\LED GREEN.png" />
+    <None Include="Resources\icons8-workspace-96.png" />
+    <None Include="Resources\icons8-workers-128.png" />
+    <None Include="Resources\icons8-workers-100.png" />
+    <None Include="Resources\icons8-workers-96.png" />
+    <None Include="Resources\icons8-worker-100.png" />
+    <None Include="Resources\icons8-worker-96.png" />
+    <None Include="Resources\icons8-worker-80.png" />
+    <None Include="Resources\icons8-worker-64.png" />
+    <None Include="Resources\icons8-work-96.png" />
+    <None Include="Resources\icons8-wood-100.png" />
+    <None Include="Resources\icons8-wood-96.png" />
+    <None Include="Resources\icons8-wi-fi-off-96.png" />
+    <None Include="Resources\icons8-wi-fi-connected-96.png" />
+    <None Include="Resources\icons8-wi-fi-96.png" />
+    <None Include="Resources\icons8-voice-recognition-96.png" />
+    <None Include="Resources\icons8-virtual-reality-96.png" />
+    <None Include="Resources\icons8-video-conference-96.png" />
+    <None Include="Resources\icons8-usb-disconnected-96.png" />
+    <None Include="Resources\icons8-usb-connector-96.png" />
+    <None Include="Resources\icons8-usb-connected-96.png" />
+    <None Include="Resources\icons8-trash-can-filled-480.png" />
+    <None Include="Resources\icons8-torso-96.png" />
+    <None Include="Resources\icons8-telephone-pole-96.png" />
+    <None Include="Resources\icons8-teamwork-96.png" />
+    <None Include="Resources\icons8-supplier-96.png" />
+    <None Include="Resources\icons8-squats-96.png" />
+    <None Include="Resources\icons8-sleep-mode-96.png" />
+    <None Include="Resources\icons8-ski-simulator-96.png" />
+    <None Include="Resources\icons8-skiing-96.png" />
+    <None Include="Resources\icons8-shutdown-96.png" />
+    <None Include="Resources\icons8-shoulders-96.png" />
+    <None Include="Resources\icons8-settings-480.png" />
+    <None Include="Resources\icons8-settings-96.png" />
+    <None Include="Resources\icons8-search-filled-480.png" />
+    <None Include="Resources\icons8-rfid-tag-96.png" />
+    <None Include="Resources\icons8-rfid-signal-96.png" />
+    <None Include="Resources\icons8-rfid-sensor-96.png" />
+    <None Include="Resources\icons8-restart-filled-480.png" />
+    <None Include="Resources\icons8-restart-96.png" />
+    <None Include="Resources\icons8-reseller-96.png" />
+    <None Include="Resources\icons8-refresh-filled-480.png" />
+    <None Include="Resources\icons8-radio-tower-96.png" />
+    <None Include="Resources\icons8-plus-filled-480.png" />
+    <None Include="Resources\icons8-pliers-96.png" />
+    <None Include="Resources\icons8-personal-trainer-96.png" />
+    <None Include="Resources\icons8-pause-button-96.png" />
+    <None Include="Resources\icons8-password-96.png" />
+    <None Include="Resources\icons8-pallet-96.png" />
+    <None Include="Resources\icons8-padlock-96.png" />
+    <None Include="Resources\icons8-overhead-crane-96.png" />
+    <None Include="Resources\icons8-oil-storage-tank-96.png" />
+    <None Include="Resources\icons8-new-contact-96.png" />
+    <None Include="Resources\icons8-name-tag-96.png" />
+    <None Include="Resources\icons8-muscle-96.png" />
+    <None Include="Resources\icons8-manager-96.png" />
+    <None Include="Resources\icons8-login-to-my-account-96.png" />
+    <None Include="Resources\icons8-lock-outline-96.png" />
+    <None Include="Resources\icons8-lock-963.png" />
+    <None Include="Resources\icons8-lock-96.png" />
+    <None Include="Resources\icons8-leg-96.png" />
+    <None Include="Resources\icons8-kicking-96.png" />
+    <None Include="Resources\icons8-key-40.png" />
+    <None Include="Resources\icons8-junction-96.png" />
+    <None Include="Resources\icons8-iron-ore-96.png" />
+    <None Include="Resources\icons8-industrial-scales-96.png" />
+    <None Include="Resources\icons8-id-verified-96.png" />
+    <None Include="Resources\icons8-heart-with-mouse-96.png" />
+    <None Include="Resources\icons8-hammer-96.png" />
+    <None Include="Resources\icons8-group-task-96.png" />
+    <None Include="Resources\icons8-gas-industry-96.png" />
+    <None Include="Resources\icons8-fork-lift-96.png" />
+    <None Include="Resources\icons8-feed-in-96.png" />
+    <None Include="Resources\icons8-factory-96.png" />
+    <None Include="Resources\icons8-engineering-96.png" />
+    <None Include="Resources\icons8-edit-500.png" />
+    <None Include="Resources\icons8-drill-96.png" />
+    <None Include="Resources\icons8-download-from-the-cloud-filled-480.png" />
+    <None Include="Resources\icons8-development-skill-96.png" />
+    <None Include="Resources\icons8-department-96.png" />
+    <None Include="Resources\icons8-delete-filled-500.png" />
+    <None Include="Resources\icons8-customer-insight-96.png" />
+    <None Include="Resources\icons8-coworking-96.png" />
+    <None Include="Resources\icons8-contacts-500.png" />
+    <None Include="Resources\icons8-construction-workers-96.png" />
+    <None Include="Resources\icons8-conference-96.png" />
+    <None Include="Resources\icons8-company-96.png" />
+    <None Include="Resources\icons8-combo-chart-96.png" />
+    <None Include="Resources\icons8-coal-mine-96.png" />
+    <None Include="Resources\icons8-client-management-96.png" />
+    <None Include="Resources\icons8-checked-480.png" />
+    <None Include="Resources\icons8-cancel-480.png" />
+    <None Include="Resources\icons8-calves-96.png" />
+    <None Include="Resources\icons8-calendar-96.png" />
+    <None Include="Resources\icons8-businessman-96.png" />
+    <None Include="Resources\icons8-business-building-96.png" />
+    <None Include="Resources\icons8-bulleted-list-96.png" />
+    <None Include="Resources\icons8-box-40.png" />
+    <None Include="Resources\icons8-alpine-skiing-96.png" />
+    <None Include="Resources\ICOn.jpg" />
+    <None Include="Resources\disconnect-512.png" />
+    <None Include="Resources\3.png" />
+    <None Include="Resources\2_parallel_footprints.JPG" />
+    <None Include="Resources\2.png" />
+    <None Include="Resources\1.png" />
+    <None Include="Resources\0.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+  </PropertyGroup>
+  <Import Project="packages\SQLitePCLRaw.lib.e_sqlite3.linux.1.1.2\build\SQLitePCLRaw.lib.e_sqlite3.linux.targets" Condition="Exists('packages\SQLitePCLRaw.lib.e_sqlite3.linux.1.1.2\build\SQLitePCLRaw.lib.e_sqlite3.linux.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>이 프로젝트는 이 컴퓨터에 없는 NuGet 패키지를 참조합니다. 해당 패키지를 다운로드하려면 NuGet 패키지 복원을 사용하십시오. 자세한 내용은 http://go.microsoft.com/fwlink/?LinkID=322105를 참조하십시오. 누락된 파일은 {0}입니다.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('packages\SQLitePCLRaw.lib.e_sqlite3.linux.1.1.2\build\SQLitePCLRaw.lib.e_sqlite3.linux.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\SQLitePCLRaw.lib.e_sqlite3.linux.1.1.2\build\SQLitePCLRaw.lib.e_sqlite3.linux.targets'))" />
+    <Error Condition="!Exists('packages\SQLitePCLRaw.lib.e_sqlite3.osx.1.1.2\build\SQLitePCLRaw.lib.e_sqlite3.osx.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\SQLitePCLRaw.lib.e_sqlite3.osx.1.1.2\build\SQLitePCLRaw.lib.e_sqlite3.osx.targets'))" />
+    <Error Condition="!Exists('packages\SQLitePCLRaw.lib.e_sqlite3.v110_xp.1.1.2\build\SQLitePCLRaw.lib.e_sqlite3.v110_xp.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\SQLitePCLRaw.lib.e_sqlite3.v110_xp.1.1.2\build\SQLitePCLRaw.lib.e_sqlite3.v110_xp.targets'))" />
+  </Target>
+  <Import Project="packages\SQLitePCLRaw.lib.e_sqlite3.osx.1.1.2\build\SQLitePCLRaw.lib.e_sqlite3.osx.targets" Condition="Exists('packages\SQLitePCLRaw.lib.e_sqlite3.osx.1.1.2\build\SQLitePCLRaw.lib.e_sqlite3.osx.targets')" />
+  <Import Project="packages\SQLitePCLRaw.lib.e_sqlite3.v110_xp.1.1.2\build\SQLitePCLRaw.lib.e_sqlite3.v110_xp.targets" Condition="Exists('packages\SQLitePCLRaw.lib.e_sqlite3.v110_xp.1.1.2\build\SQLitePCLRaw.lib.e_sqlite3.v110_xp.targets')" />
+</Project>
